@@ -1,30 +1,40 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/HomePage';
-import Login from './pages/Login';
-import AdminLayout from './pages/AdminLayout';
-import Productos from './pages/AdminLayout/Productos';
-import Categorias from './pages/AdminLayout/Categorias';
+import Contenedor from './components/Contenedor';
+
+import HomePage from './pages/HomePage';
+import PeliculasPage from './pages/PeliculasPages'; 
+import DetailPage from './pages/DetailPage';
 import ErrorPage from './pages/ErrorPage';
-import PrivateRoute from './PrivateRoute';
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import AdminLayout from './pages/AdminLayout';
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/inicio' element={<Navigate to='/' />} />
-      <Route path='/login' element={<Login />} />
-      
-      {/* Rutas protegidas */}
-    <Route element={<PrivateRoute isAuthenticated={isAuthenticated} />}>
-    <Route path='/admin' element={<AdminLayout />}>
-    <Route path='productos' element={<Productos />} />
-    <Route path='categorias' element={<Categorias />} />
-    </Route>
-    </Route>
+    
+      <Route element={<Contenedor />}>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/inicio' element={<Navigate to='/' />} />
+        
+        <Route path='/peliculas' element={<PeliculasPage />} />
+    
+        <Route path='/pelicula/:id' element={<DetailPage />} />
+        <Route path='/login' element={<Login />} />
+      </Route>
 
-      </Routes>
    
-  )
+      <Route path="/admin" element={<AdminLayout />}>
+        <Route index element={<Admin />} />
+      </Route>
+
+      <Route path='*' element={
+        <Contenedor>
+          <ErrorPage />
+        </Contenedor>
+      } />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

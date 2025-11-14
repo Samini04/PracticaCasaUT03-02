@@ -1,30 +1,52 @@
-function Contenedor({ children, titulo }) {
-  return (
-    // <div className="min-h-screen bg-linear-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-8">
-    //   {children}
-    // </div>
-    <main
-      id="main-content"
-      role="main"
-      tabIndex="-1"
-      className="min-h-screen bg-linear-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-8"
-    >
-      <section
-        aria-labelledby="main-section-title"
-        className="w-full max-w-7xl text-center"
-      >
-        {titulo && (
-          <h1
-            id="main-section-title"
-            className="font-heading-h1 leading-(--heading-h1-line-height) text-(--colorprimary) [text-shadow:0px_4px_4px_#00000040]"
-          >
-            {titulo}
-          </h1>
-        )}
+import { Outlet } from "react-router-dom";
+import Header from "./Header"; 
+import Footer from "./Footer"; 
 
-        {children}
-      </section>
-    </main>
+/**
+ * Componente Contenedor (Layout)
+ * Define la estructura visual principal de la aplicación.
+ * Muestra el Header, el contenido principal (a través de Outlet) y el Footer.
+ */
+function Contenedor({ titulo }) {
+  return (
+    // Contenedor principal que usa flex-col para ordenar los elementos verticalmente
+    // y min-h-screen para que ocupe al menos toda la altura de la pantalla
+    <div className="flex flex-col min-h-screen bg-gray-100">
+      
+      {/* 3. El Header se muestra siempre arriba */}
+      <Header />
+
+      {/* 4. El contenido principal */}
+      <main
+        id="main-content"
+        role="main"
+        tabIndex="-1"
+        // 'flex-grow' hace que esta sección crezca para ocupar el espacio
+        // disponible entre el header y el footer
+        className="flex-grow w-full max-w-7xl mx-auto p-4"
+      >
+        <section
+          aria-labelledby="main-section-title"
+          className="w-full" // Quitamos el centrado vertical
+        >
+          {/* El título es opcional y venía de tu código original */}
+          {titulo && (
+            <h1
+              id="main-section-title"
+              className="text-3xl font-bold my-4 text-center"
+            >
+              {titulo}
+            </h1>
+          )}
+
+          {/* Aquí es donde React Router renderizará la página actual (ej. HomePage) */}
+          <Outlet />
+        </section>
+      </main>
+
+      {/* 5. El Footer se muestra siempre abajo */}
+      <Footer />
+    </div>
   );
 }
 
