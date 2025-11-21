@@ -2,8 +2,8 @@ import peliculas from '../data/peliculas';
 import List from '../components/List';
 
 /**
- * Página del Listado de Películas
- * Muestra la cuadrícula de películas disponibles.
+ * Simplemente le paso el array de peliculas al componente List,
+ * que mostrará la tarjeta por defecto para cada película.
  */
 export default function PeliculasPage() {
   return (

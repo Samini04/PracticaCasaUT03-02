@@ -39,7 +39,7 @@ function Contenedor({ titulo }) {
             </h1>
           )}
 
-          {/* Aquí es donde React Router renderizará la página actual (ej. HomePage) */}
+          {/* Aquí es donde React Router renderizará la página actual  */}
           <Outlet />
         </section>
       </main>

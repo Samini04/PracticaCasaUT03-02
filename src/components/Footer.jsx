@@ -1,5 +1,13 @@
 import React from 'react';
 
+
+/**
+ * Footer global.
+ *
+ * role="contentinfo" marca el pie de página para tecnologías asistivas.
+ * mt-auto asegura que si el contenido principal es corto, el footer quede abajo.
+ *
+ */
 export default function Footer() {
   return (
     <footer 

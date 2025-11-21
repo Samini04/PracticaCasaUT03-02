@@ -1,7 +1,11 @@
 
 import React from 'react';
 
-
+/**
+ * Página de error 404 simple.
+ *
+ * Mostrar esto cuando la ruta no exista.
+ */
 export default function ErrorPage() {
 return (
 <section className="max-w-7xl mx-auto p-4 text-center">

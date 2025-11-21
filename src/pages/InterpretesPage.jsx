@@ -4,25 +4,27 @@ import List from '../components/List';
 import Interprete from '../components/Interprete'; 
 
 const getAllInterpretes = (movies) => {
-  const interpretesMap = new Map();
+  //  Uun array vacío donde iremos guardando los actores únicos
+  const listaActores = [];
 
   movies.forEach(pelicula => {
-    //  Añadimos la información de la película al objeto del intérprete
     pelicula.actores.forEach(actor => {
-      // Usamos el nombre como clave única para evitar duplicados
-      if (!interpretesMap.has(actor.nombre)) {
-        // Creamos una copia del objeto actor y le añadimos una ID única
-        interpretesMap.set(actor.nombre, { 
-          ...actor, 
-          id: actor.nombre, // Usamos el nombre como ID temporal
-    
+      
+      // Antes de guardar, buscamos en nuestra lista si ya existe alguien con ese nombre
+      // .find() devuelve el elemento si lo encuentra.
+      const yaExiste = listaActores.find(item => item.nombre === actor.nombre);
+
+      //  Si NO existe, lo añadimos al array
+      if (!yaExiste) {
+        listaActores.push({
+          ...actor, //  Esto para copiar todo el objeto actor  
+          id: actor.nombre   // añade el nombre como id
         });
       }
     });
   });
 
-
-  return Array.from(interpretesMap.values());
+  return listaActores;
 };
 
 
@@ -34,7 +36,7 @@ export default function InterpretesPage() {
     <section>
       <h2 className="text-2xl font-semibold mb-4 text-center">Listado de Intérpretes</h2>
       
-      {/* Usamos el componente List, pero le pasamos una función renderItem */}
+      {/* Llamo al componente List, le paso la funccion renderItem */}
       <List 
         items={interpretes} 
         renderItem={(interprete) => (

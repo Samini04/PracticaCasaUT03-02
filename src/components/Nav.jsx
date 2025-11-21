@@ -1,26 +1,34 @@
 import { useState } from "react";
 import { NavLink } from 'react-router-dom';
 
-// Clases de estilo activo/inactivo (manteniendo tus estilos base)
+/**
+ * Componente Nav: menú de navegación responsive.
+ *
+ * - Muestra un botón tipo "hamburger" en móvil para abrir/cerrar el menú.
+ * - Usa NavLink para aplicar estilos cuando la ruta está activa.
+ * - Al hacer click en un enlace en móvil, cierra el menú (setOpen(false)).
+ *
+ * @returns {JSX.Element}
+ */
 const activeClass = ({ isActive }) => 
   isActive 
-    ? 'text-blue-600 font-semibold' 
-    : 'text-gray-700 hover:text-blue-500';
+    ? 'text-blue-600 font-semibold' // estilo cuando la ruta es activa
+    : 'text-gray-700 hover:text-blue-500'; // estilo por defecto
 
 export default function Nav() {
-  // Estado para controlar la apertura/cierre en móvil
+  // // Controla si el menú en móvil está abierto o cerrado
   const [open, setOpen] = useState(false);
   const menuId = "main-navigation-menu";
 
   return (
     <>
-      {/* Solo se ve en pantallas pequeñas o móviles */}
+      {/* Botón visible solo en pantallas pequeñas (md:hidden).
+          aria-expanded indica si el menú está abierto y aria-controls referencia el id del nav */}
       <button
         aria-label={open ? "Cerrar menú de navegación" : "Abrir menú de navegación"}
         aria-expanded={open}
         aria-controls={menuId}
         onClick={() => setOpen(!open)}
-        // Solo visible en móvil, oculto en md o superior
         className="text-gray-700 text-2xl p-2 md:hidden focus:outline-none focus:ring"
       >
         {/* Se cambia el icono dependiendo del estado */}

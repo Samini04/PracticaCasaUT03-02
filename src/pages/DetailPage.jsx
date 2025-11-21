@@ -3,12 +3,22 @@ import { useParams, Link } from 'react-router-dom';
 import peliculas from '../data/peliculas';
 
 
+/**
+ * Página de detalle de una película.
+ *
+ * - Lee el parámetro "id" de la URL con useParams.
+ * - Busca la película en el array "peliculas".
+ * - Si no existe muestra un mensaje de "no encontrada" con enlace de vuelta.
+ * - Si existe, muestra cartel, titulo etc.
+ */
 export default function DetailPage() {
 
   const { id } = useParams();
   
+  // Buscar por id
   const pelicula = peliculas.find(p => p.id == id);
 
+  // Sino encuentra la película
   if (!pelicula) {
     return (
       <section className="text-center">
@@ -20,6 +30,7 @@ export default function DetailPage() {
     );
   }
 
+  // Si encuentra la película, renderiza detalle enriquecido
   return (
     <article className="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
       <div className="md:flex">

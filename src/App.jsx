@@ -1,5 +1,7 @@
 // src/App.jsx
 
+// La página principal de la aplicación, gestiona las rutas
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Contenedor from './components/Contenedor';
 
@@ -14,8 +16,9 @@ import InterpretesPage from './pages/InterpretesPage';
 
 function App() {
   return (
+    // Definición de las rutas de la aplicación
     <Routes>
-    
+
       <Route element={<Contenedor />}>
         <Route path='/' element={<HomePage />} />
         <Route path='/inicio' element={<Navigate to='/' />} />
