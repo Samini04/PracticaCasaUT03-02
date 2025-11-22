@@ -69,6 +69,7 @@ La aplicación es usable por teclado y lectores de pantalla.
 ## c. Pruebas de usabilidad
 
 Tanto en móvil como en escritorio puedes navegar con solo el teclado TAB, tambien el menu de hamburguesa se aprece segun el tamaño de pantalla.
+
 ![alt text](image-13.png)
 
 ![alt text](image-14.png)
