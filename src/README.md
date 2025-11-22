@@ -27,6 +27,14 @@ Organización de proyecto
 ![alt text](image-6.png)
 
 ###  Propiedades, eventos y acciones
+Los componentes manejan props, rutas dinámicas y eventos como:
+
+- clic en productos
+a-pertura/cierre del menú responsivo
+- navegación hacia detalles
+- botón volver atrás
+
+Esto garantiza una interacción natural y fluida.
 ![alt text](image-8.png)
 
 ![alt text](image-9.png)
