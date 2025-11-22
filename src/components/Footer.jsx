@@ -1,5 +1,12 @@
 import React from 'react';
 
+/**
+ * Pie de Página Global.
+ * Utiliza la etiqueta semántica <footer>
+ * Que indetifica los datos del autor y el nombre mi interfaz tambien
+ * asi los lectores de pantalla identifiquen esta sección correctamente.
+ * * @returns {JSX.Element} Sección de pie de página.
+ */
 export default function Footer() {
   return (
     <footer 
@@ -7,9 +14,11 @@ export default function Footer() {
       className="bg-teal-900 text-teal-100 text-center p-8 w-full mt-auto"
     >
       <div className="container mx-auto grid md:grid-cols-3 gap-8 text-sm">
+       {/* Sección de Marca */}
         <div>
               <img src="/public/imagenes/logo.png" alt="TerraBloom Logo" />
         </div>
+        {/* Sección de Enlaces */}
         <div>
             <h4 className="font-bold text-white mb-2">Enlaces</h4>
             <ul className="space-y-1">

@@ -52,45 +52,45 @@ const productos = [
   },
   {
     id: 8,
-    nombre: "Imagen Genérica 1",
+    nombre: "Fresas",
     imagen: "/public/imagenes/imagen2.png",
     precio: 5.00,
-    descripcion: "Producto asociado a imagen2."
+    descripcion: "Fresas rojas dulces."
   },
   {
     id: 9,
-    nombre: "Imagen Genérica 2",
+    nombre: "Platanos",
     imagen: "/public/imagenes/imagen3.png",
     precio: 6.00,
-    descripcion: "Producto asociado a imagen3."
+    descripcion: "Platanos nuevos del mercado."
   },
   {
     id: 10,
-    nombre: "Imagen Genérica 3",
+    nombre: "Kiwi verde",
     imagen: "/public/imagenes/imagen7.png",
     precio: 4.00,
-    descripcion: "Producto asociado a imagen7."
+    descripcion: "De sabor muy rico"
   },
   {
     id: 11,
-    nombre: "Imagen Genérica 4",
+    nombre: "Tomates rojas",
     imagen: "/public/imagenes/imagen13.avif",
     precio: 7.00,
-    descripcion: "Producto asociado a imagen13."
+    descripcion: "Tomates recién sacas del campo."
   },
   {
     id: 12,
-    nombre: "Ed Oneil",
+    nombre: "Tomates ",
     imagen: "/public/imagenes/ed-o-neil-AvvdZlhDowA-unsplash 1.png",
     precio: 10.00,
-    descripcion: "Producto relacionado a la imagen de Ed O'Neil."
+    descripcion: "Tomates del Mercadona"
   },
   {
     id: 13,
-    nombre: "K8 Photo",
+    nombre: "Cebollas",
     imagen: "/public/imagenes/k8-0_fkPHulv-M-unsplash_2-removebg-preview.png",
     precio: 8.50,
-    descripcion: "Producto basado en la imagen de K8."
+    descripcion: "Cebollas para Mercadona."
   }
 ];
 

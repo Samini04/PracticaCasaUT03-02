@@ -1,6 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+/**
+ * Página de Inicio.
+ * Ofrece accesos directos a las secciones principales (Productos, Ofertas).
+ * * @returns {JSX.Element} Vista de bienvenida.
+ */
 export default function HomePage() {
   return (
     <section className="text-center py-20 px-4">
@@ -16,12 +22,7 @@ export default function HomePage() {
             >
                 Ver Productos
             </Link>
-            <Link 
-                to="/ofertas" 
-                className="bg-white text-teal-700 border border-teal-700 text-lg font-semibold py-3 px-8 rounded-full hover:bg-teal-50 transition"
-            >
-                Ofertas del Día
-            </Link>
+            
         </div>
       </div>
     </section>

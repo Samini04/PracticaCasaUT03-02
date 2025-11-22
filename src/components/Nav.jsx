@@ -2,16 +2,22 @@ import { useState } from "react";
 import { NavLink } from 'react-router-dom';
 
 /**
- * Navegación con estilos de TerraBloom.
- * Active class: texto blanco y subrayado o negrita.
- * Inactive: texto teal-100 (verde muy claro).
+ * Función auxiliar para estilos de enlace activo.
+ * Devuelve clases CSS condicionales basadas en si la ruta está activa.
  */
 const activeClass = ({ isActive }) => 
   isActive 
     ? 'text-white font-bold underline decoration-lime-400 decoration-2 underline-offset-4' 
     : 'text-teal-100 hover:text-white transition-colors';
 
-export default function Nav() {
+/**
+ * Componente de Navegación Responsiva.
+ * * Gestiona el menú principal de la aplicación.
+ * Incluye lógica para versión móvil (Menú Hamburguesa) 
+ * para controlar la visibilidad y atributos ARIA para la accesibilidad.
+ * * @returns {JSX.Element} Navegación principal.
+ */
+    export default function Nav() {
   const [open, setOpen] = useState(false);
   const menuId = "main-navigation-menu";
 
@@ -50,11 +56,10 @@ export default function Nav() {
               Admin
             </NavLink>
           </li>
-          {/* Iconos extra estilo header (Búsqueda, Carrito, Usuario) */}
+          {/* Iconos de carrito y perfil */}
           <li className="flex gap-4 md:ml-4">
-             <span className="cursor-pointer hover:text-lime-400">🔍</span>
-             <span className="cursor-pointer hover:text-lime-400">🛒</span>
-             <span className="cursor-pointer hover:text-lime-400">👤</span>
+            <img src="/public/imagenes/carrito.png" alt="Foto de carrito"width="40" height="40" />
+            <img src="/public/imagenes/perfil.png" alt="Foto de perfil"width="40" height="40" />
           </li>
         </ul>
       </nav>

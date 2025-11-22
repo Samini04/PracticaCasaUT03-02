@@ -1,6 +1,9 @@
 /**
- * Componente principal de enrutamiento.
- * Estructura de navegación para la tienda de productos.
+ * Componente Raíz y Configuración de Enrutamiento.
+ * * Define la arquitectura de navegación de DOM.
+ * Organiza las rutas en Contenedor y AdminLayout.
+ * Gestiona redirecciones y rutas comodín para errores 404.
+ * * @component
  */
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Contenedor from './components/Contenedor';
@@ -12,7 +15,7 @@ import DetailPage from './pages/DetailPage';
 import ErrorPage from './pages/ErrorPage';
 import Admin from './pages/Admin';
 import AdminLayout from './pages/AdminLayout';
-// import InterpretesPage from './pages/InterpretesPage'; // Ya no es necesario para productos
+
 
 function App() {
   return (

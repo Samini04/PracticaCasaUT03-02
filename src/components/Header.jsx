@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import Nav from './Nav.jsx';
 
 /**
- * Header global estilo TerraBloom.
- * Fondo verde azulado oscuro (teal-700).
+ * Encabezado Global .
+ * * Contiene Logo de mi interfaz y el menú de navegación principal.
+ * Implementa el rol "banner" para cumplir con los hitos de accesibilidad.
+ * * @returns {JSX.Element} Barra superior de navegación.
  */
 export default function Header() {
   return (
@@ -19,7 +21,7 @@ export default function Header() {
           className="text-2xl font-bold text-white flex items-center gap-2 hover:text-teal-100"
           aria-label="Inicio - TerraBloom"
         >
-          {/* Icono de hoja opcional */}
+          {/* Nombre de la web */}
           <span>TerraBloom</span>
         </Link>
         

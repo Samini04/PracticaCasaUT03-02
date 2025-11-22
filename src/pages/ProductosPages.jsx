@@ -1,6 +1,13 @@
 import productos from '../data/productos';
 import List from '../components/List';
 
+/**
+ * Página del Catálogo de Productos.
+ * * Actúa como controlador que obtiene los datos estáticos productos.js
+ * y los pasa al componente de presentación List.
+ * Muestra un resumen de la cantidad de productos disponibles.
+ * * @returns {JSX.Element} Vista completa del listado de productos.
+ */
 export default function ProductosPage() {
   return (
     <section className="container mx-auto py-8"> 

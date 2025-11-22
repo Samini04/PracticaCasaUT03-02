@@ -2,9 +2,10 @@
 import React from 'react';
 
 /**
- * Página de error 404 simple.
- *
- * Mostrar esto cuando la ruta no exista.
+ * Página de Error 404.
+ * * Se muestra cuando el usuario intenta acceder a una ruta no definida.
+ * Proporciona feedback claro al usuario sobre el estado de la navegación.
+ * * @returns {JSX.Element} Mensaje de página no encontrada.
  */
 export default function ErrorPage() {
 return (
